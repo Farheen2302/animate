@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>3d model iphone (three.js)</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#wrapper_loader{
+				height: 100%;
+				width: 100%;
+
+				background: rgba(60,55,96, 1);
+				/*display: none;*/
+
+				position: fixed;
+				top: 0;
+				z-index: 9999;
+			}
+
+			.loader{
+				position: relative;
+				width: 12px;
+				height: 12px;
+
+				top: 46%;
+				top: -webkit-calc(50% - 6px);
+				top: calc(50% - 6px);
+				left: 46%;
+				left: -webkit-calc(50% - 6px);
+				left: calc(50% - 6px);
+
+				border-radius: 12px;
+				background-color: #fff;
+				-webkit-transform-origin:  50% 50%;
+						transform-origin:  50% 50% ;
+				-webkit-animation: loader 1s ease-in-out infinite;
+						animation: loader 1s ease-in-out infinite;
+			}
+
+			.loader:before{
+				content: "";
+				position: absolute;
+				background-color: rgba(255, 255, 255, .5);
+				top: 0px;
+				left: -25px;
+				height: 12px;
+				width: 12px;
+				border-radius: 12px;
+			}
+
+			.loader:after{
+				content: "";
+				position: absolute;
+				background-color: rgba(255, 255 ,255 ,.5);
+				top: 0px;
+				left: 25px;
+				height: 12px;
+				width: 12px;
+				border-radius: 12px;
+			}
+
+
+			@-webkit-keyframes loader{
+				0%{-webkit-transform:rotate(0deg);}
+				50%{-webkit-transform:rotate(180deg);}
+				100%{-webkit-transform:rotate(180deg);}
+			}
+
+			@keyframes loader{
+				0%{transform:rotate(0deg);}
+				50%{transform:rotate(180deg);}
+				100%{transform:rotate(180deg);}
+			}
+		</style>
+	</head>
+	<body>o
+		<div id="wrapper_loader">
+			<div class="loader"></div>
+		</div>
+		<script src="three.min.js"></script>
+		<script src="OrbitControls.min.js"></script>
+		<script async src="init.js"></script>
+
+	</body>
+</html>
